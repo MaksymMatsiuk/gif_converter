@@ -3,9 +3,6 @@ from tkinter.filedialog import askopenfilename
 import imageio
 import os
 
-def video_path():
-    video_path = askopenfilename(title="Select a video file", filetypes=[("Video files", "*.mp4 *.avi *.mov *.mkv")])
-    return video_path
 
 class File:
     def __init__(self, cap, fps):
@@ -13,6 +10,12 @@ class File:
         self.fps = fps
         self.frames = []
 
+    @staticmethod
+    def video_path():
+        video_path = askopenfilename(title="Select a video file", filetypes=[("Video files", "*.mp4 *.avi *.mov *.mkv")])
+        return video_path
+
+    
     def open_in_original_speed(self):
         delay = int(1000/self.fps)
         return delay

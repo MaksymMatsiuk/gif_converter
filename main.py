@@ -3,7 +3,7 @@ from ui import *
 from video_editing import *
 from basic_operations import *
 
-cap = cv.VideoCapture(video_path())
+cap = cv.VideoCapture(File.video_path())
 fps = get_fps(cap)
 
 file = File(cap, fps)
