@@ -1,12 +1,13 @@
-import cv2 as cv
-from tkinter import Tk
-from tkinter.filedialog import askopenfilename
+import tkinter as tk
+from basic_operations import *
 
-# Hide the main Tkinter window
-Tk().withdraw()
+root = tk.Tk()
+root.title("Main window")
+root.geometry("400x300")
 
-# Open file dialog to select video
-def video_path():
-    video_path = askopenfilename(title="Select a video file", filetypes=[("Video files", "*.mp4 *.avi *.mov *.mkv")])
-    return video_path
+button_select = tk.Button(root, text="Select video", command= lambda: [video_path()])
+button_select.pack(pady=10)
+
+
+root.mainloop()
 

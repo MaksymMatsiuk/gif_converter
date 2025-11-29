@@ -1,6 +1,11 @@
 import cv2 as cv
 from tkinter.filedialog import askopenfilename
 import imageio
+import os
+
+def video_path():
+    video_path = askopenfilename(title="Select a video file", filetypes=[("Video files", "*.mp4 *.avi *.mov *.mkv")])
+    return video_path
 
 class File:
     def __init__(self, cap, fps):
@@ -31,3 +36,5 @@ class File:
         imageio.mimsave(path, rgb_frames, fps = self.fps)
 
     
+class Folder_Manager:
+    pass
