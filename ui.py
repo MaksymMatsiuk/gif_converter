@@ -1,13 +1,16 @@
 import tkinter as tk
 from basic_operations import *
 
-root = tk.Tk()
-root.title("Main window")
-root.geometry("400x300")
+class App:
+    def __init__(self):
+        self.root = tk.Tk()
+        self.root.title("Main window")
+        self.root.geometry("400x300")
 
-button_select = tk.Button(root, text="Select video", command= File.video_path())
-button_select.pack(pady=10)
+    def run(self):
+        self.root.mainloop()
 
-
-root.mainloop()
+    def create_button(self, text, command):
+        button = tk.Button(self.root, text=text, command=command)
+        button.pack(pady=5)
 
