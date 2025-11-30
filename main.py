@@ -14,7 +14,6 @@ def start():
 
 app = App()
 app.create_button("some", start)
-app.create_button("save", )
 app.run()
 
 
