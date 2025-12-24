@@ -1,5 +1,6 @@
 import cv2 as cv
 from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import asksaveasfilename
 import imageio
 import os
 
@@ -54,7 +55,18 @@ class File:
                 break
         cv.destroyAllWindows()
 
-    def save_as_gif(self, path):
+    def save_as_gif(self):
+        if not self.frames:
+            print("Nothing to save")
+            return
+        
+        path = asksaveasfilename(
+            defaultextension=".gif",
+            filetypes=[("GIF files", "*.gif")]
+        )
+        if not path:
+            return        
+
         rgb_frames = [cv.cvtColor(f, cv.COLOR_BGR2RGB) for f in self.frames]
         imageio.mimsave(path, rgb_frames, fps = self.fps)
 
