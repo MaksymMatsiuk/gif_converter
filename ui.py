@@ -13,4 +13,4 @@ class App:
     def create_button(self, text, command):
         button = tk.Button(self.root, text=text, command=command)
         button.pack(pady=5)
-
+ 
