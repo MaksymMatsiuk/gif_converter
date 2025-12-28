@@ -24,7 +24,6 @@ class File:
         self.fps = self.cap.get(cv.CAP_PROP_FPS)
         self.frames = []
 
-    def read_video(self):
         if self.cap is None:
             print("no video opened")
             return
@@ -35,7 +34,6 @@ class File:
                 break
             self.frames.append(frame)
         self.cap.release()
-
 
     def open_in_original_speed(self):
         delay = int(1000/self.fps)
